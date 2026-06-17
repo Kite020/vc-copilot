@@ -1,0 +1,22 @@
+Startup Name: MediScan AI
+
+Industry: Healthcare AI
+
+Problem:
+Hospitals spend significant time manually reviewing radiology reports, causing delays and diagnostic bottlenecks.
+
+Solution:
+MediScan AI uses large language models and computer vision to automatically summarize radiology scans and generate preliminary reports.
+
+Business Model:
+Subscription-based SaaS platform for hospitals and diagnostic centers.
+
+Target Market:
+Healthcare providers in North America and Europe.
+
+Funding Stage:
+Seed
+
+Founders:
+Dr. Sarah Johnson, former radiologist.
+Alex Chen, ex-Google ML Engineer.
