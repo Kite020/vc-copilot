@@ -1,16 +1,30 @@
-from app.services.vision_service import (
-    pdf_to_images
+import base64
+
+from app.small_llm import small_llm
+
+with open("slide_1.png", "rb") as f:
+    image_base64 = base64.b64encode(
+        f.read()
+    ).decode()
+
+response = small_llm.invoke(
+    [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Describe this startup pitch deck slide."
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/png;base64,{image_base64}"
+                    }
+                }
+            ]
+        }
+    ]
 )
 
-images = pdf_to_images(
-    "pitch_decks/Pitch-Deck-airbnb.pdf"
-)
-
-print(
-    "Pages:",
-    len(images)
-)
-
-images[0].save(
-    "first_page.png"
-)
+print(response.content)

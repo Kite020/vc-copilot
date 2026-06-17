@@ -3,7 +3,6 @@ from langgraph.graph import END
 
 from app.models.state import VCState
 
-from app.agents.extraction_node import extraction_node
 from app.agents.market_research_node import market_research_node
 from app.agents.competitor_node import competitor_node
 from app.agents.risk_node import risk_node
@@ -13,11 +12,6 @@ from app.agents.founder_node import (
 )
 
 builder = StateGraph(VCState)
-
-builder.add_node(
-    "extract_startup",
-    extraction_node
-)
 
 builder.add_node(
     "market_research",
@@ -45,11 +39,6 @@ builder.add_node(
 )
 
 builder.set_entry_point(
-    "extract_startup"
-)
-
-builder.add_edge(
-    "extract_startup",
     "market_research"
 )
 
