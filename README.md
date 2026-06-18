@@ -369,12 +369,6 @@ This project demonstrates:
 
 **Ankita Dash**
 
-B.Tech Computer Science & Engineering
-Indian Institute of Technology Jammu
-
-GitHub: https://github.com/YOUR_USERNAME
-
-LinkedIn: https://linkedin.com/in/YOUR_PROFILE
 
 ---
 
