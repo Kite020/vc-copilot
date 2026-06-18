@@ -1,4 +1,4 @@
-from app.llm import llm
+from app.llms.fallback_llm import invoke_llm
 
 
 def generate_memo(state):
@@ -73,6 +73,6 @@ Include:
 5. Investment Recommendation
 """
 
-    response = llm.invoke(prompt)
+    response = invoke_llm(prompt)
 
     return response.content

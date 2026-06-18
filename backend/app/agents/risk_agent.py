@@ -2,7 +2,7 @@ import os
 import json
 
 from dotenv import load_dotenv
-from app.llm import llm
+from app.llms.fallback_llm import invoke_llm
 
 
 
@@ -87,7 +87,7 @@ Only provide individual risk scores.
 Return JSON only.
 """
 
-    response = llm.invoke(prompt)
+    response = invoke_llm(prompt)
 
     cleaned = response.content
     cleaned = cleaned.replace("```json", "")

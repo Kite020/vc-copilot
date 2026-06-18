@@ -1,13 +1,15 @@
 from fastapi import FastAPI, UploadFile, File
-import shutil
-import os
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+import os
+import shutil
 
 from app.agents.pitch_deck_agent import process_pitch_deck
 from app.utils.state_builder import build_state
 from app.graph.vc_graph import graph
 
 app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
@@ -23,64 +25,131 @@ def home():
         "message": "VC Copilot API Running"
     }
 
+
+@app.get("/download-memo")
+def download_memo():
+
+    return FileResponse(
+        path="data/reports/investment_memo.pdf",
+        filename="investment_memo.pdf",
+        media_type="application/pdf"
+    )
+
+
 @app.post("/analyze-deck")
 async def analyze_deck(
     file: UploadFile = File(...)
 ):
 
-    return {
-        "startup_name": "Airbnb",
-        "recommendation": "INVEST",
-        "investment_score": 90,
-        "overall_risk": 2.8,
-        "founder_score": 9,
-        "competitors": [
-            "HomeExchange",
-            "Kindred"
-        ]
-    }
+    try:
 
+        os.makedirs(
+            "uploaded_decks",
+            exist_ok=True
+        )
 
-# @app.post("/analyze-deck")
-# async def analyze_deck(
-#     file: UploadFile = File(...)
-# ):
+        pdf_path = (
+            f"uploaded_decks/{file.filename}"
+        )
 
-#     os.makedirs(
-#         "uploaded_decks",
-#         exist_ok=True
-#     )
+        with open(
+            pdf_path,
+            "wb"
+        ) as buffer:
 
-#     pdf_path = f"uploaded_decks/{file.filename}"
+            shutil.copyfileobj(
+                file.file,
+                buffer
+            )
 
-#     with open(pdf_path, "wb") as buffer:
-#         shutil.copyfileobj(
-#             file.file,
-#             buffer
-#         )
+        print(
+            "\nProcessing Pitch Deck...\n"
+        )
 
-#     startup = process_pitch_deck(
-#         pdf_path
-#     )
+        startup = process_pitch_deck(
+            pdf_path
+        )
 
-#     state = build_state(
-#         startup
-#     )
+        print(
+            "\nStartup Extracted:\n"
+        )
 
-#     result = graph.invoke(
-#         state
-#     )
+        print(startup)
 
-#     return {
-#         "startup_name":
-#         startup["startup_name"],
+        state = build_state(
+            startup
+        )
 
-#         "recommendation":
-#         result["recommendation"],
+        result = graph.invoke(
+            state
+        )
 
-#         "investment_score":
-#         result["investment_score"],
+        return {
+            "startup_name":
+            result["startup_name"],
 
-#         "overall_risk":
-#         result["overall_risk"]
-#     }
+            "startup_summary":
+            (
+                f"{result['startup_name']} operates "
+                f"in the {result['industry']} industry. "
+                f"It solves {result['problem']} "
+                f"through {result['solution']}."
+            ),
+
+            "recommendation":
+            result["recommendation"],
+
+            "investment_score":
+            result["investment_score"],
+
+            "overall_risk":
+            result["overall_risk"],
+
+            "founder_score":
+            result["founder_score"],
+
+            "competitors":
+            result["competitors"],
+
+            "founder_strengths":
+            result["founder_strengths"],
+
+            "founder_risks":
+            result["founder_risks"],
+
+            "reasons":
+            result["committee_reasons"],
+
+            "next_steps":
+            result["next_steps"],
+
+            "risk_summary":
+            result["risk_analysis"],
+
+            "market_risk":
+            result["market_risk"],
+
+            "competition_risk":
+            result["competition_risk"],
+
+            "execution_risk":
+            result["execution_risk"],
+
+            "funding_risk":
+            result["funding_risk"],
+
+            "founder_risk":
+            result["founder_risk"]
+        }
+
+    except Exception as e:
+
+        print(
+            "\nERROR:\n",
+            str(e)
+        )
+
+        return {
+            "success": False,
+            "error": str(e)
+        }

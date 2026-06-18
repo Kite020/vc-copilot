@@ -32,6 +32,10 @@ function UploadPage() {
                 },
               }
             );
+            if (response.data.error) {
+              alert(response.data.error);
+              return;
+            }
       
             navigate(
                 "/results",

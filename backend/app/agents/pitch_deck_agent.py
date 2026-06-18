@@ -12,6 +12,10 @@ from app.agents.deck_extraction_agent import (
     extract_startup_info
 )
 
+from app.utils.combine_slides import (
+    combine_slides
+)
+
 
 def process_pitch_deck(pdf_path):
 
@@ -27,17 +31,34 @@ def process_pitch_deck(pdf_path):
 
     all_notes = []
 
-    for image_path in image_paths:
+    batch_size = 5
+
+    for i in range(
+        0,
+        len(image_paths),
+        batch_size
+    ):
+
+        batch = image_paths[
+            i:i + batch_size
+        ]
 
         print(
-            f"Analyzing {image_path}..."
+            f"Analyzing batch {i//batch_size + 1}"
         )
 
-        result = analyze_slide(
-            image_path
+        combined_image = combine_slides(
+            batch,
+            output_path=f"batch_{i//batch_size + 1}.png"
         )
 
-        all_notes.append(result)
+        batch_result = analyze_slide(
+            combined_image
+        )
+
+        all_notes.append(
+            batch_result
+        )
 
     deck_analysis = "\n\n".join(
         all_notes

@@ -18,18 +18,31 @@ def analyze_slide(image_path):
                     {
                         "type": "text",
                         "text": """
-You are a Venture Capital analyst.
+You are a Senior Venture Capital analyst.
 
-Analyze this pitch deck slide.
+Analyze these pitch deck slides.
 
-Extract ONLY the useful startup information.
-
-Return:
+For EACH slide identify:
 
 - Slide Type
 - Key Information
 - Important Numbers
+- Founders Mentioned
+- Competitors Mentioned
+- Traction Mentioned
+- Revenue Mentioned
+- Market Information
 - Startup Insights
+
+IMPORTANT:
+
+- Mention founder names exactly if visible.
+- Mention competitor names exactly if visible.
+- Mention revenue and growth metrics exactly if visible.
+- Do not hallucinate.
+- If information is missing, say "Not Mentioned".
+
+Return a structured summary of all slides.
 
 Keep response under 150 words.
 """

@@ -3,7 +3,7 @@ import json
 
 from dotenv import load_dotenv
 from tavily import TavilyClient
-from app.llm import llm
+from app.llms.fallback_llm import invoke_llm
 from app.small_llm import small_llm
 
 tavily = TavilyClient(
@@ -68,5 +68,8 @@ Rules:
     cleaned = cleaned.replace("```json", "")
     cleaned = cleaned.replace("```", "")
     cleaned = cleaned.strip()
+
+    print("\nMARKET EXTRACTION:\n")
+    print(cleaned)
 
     return json.loads(cleaned)

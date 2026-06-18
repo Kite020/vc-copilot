@@ -1,19 +1,18 @@
 # Python
 __pycache__/
 *.pyc
-
-# Virtual Environment
 venv/
-
-# Environment Variables
 .env
 
-# macOS
+# Generated files
+uploaded_decks/
+data/cache/
+*.png
+*.pdf
+
+# Node
+node_modules/
+dist/
+
+# Mac
 .DS_Store
-
-# VS Code
-.vscode/
-
-(venv) (base) a91720@Ankitas-MacBook-Air vc-copilot % git grep "AQ."
-backend/data/reports/investment_memo.pdf:GatU3gMRrh&:O:S$r@(L$<bpE@bHf[P,:MX(l_PV,qnoY8BZ<JDFj3<b1CilHfN7P3H/EB[R>.J3-3B5@0@8?M>Zge$h21DIfD3UBF:dt7.]pg<hJ=+lKnCN<:='u_/^-IYHG%3kQEJ2r.<UldFkHU7g?DeWJNPkAOGXq^q3*q$R\T#]4/AeB)`cMs2+%[G4ITjoGu2Z>=SokQh0NU@p%$;#4WEo(kb"=@5.e\+ZF(33=lOn.abgZJ'rVFN@U68HhnXE@j:ANg2cdn"9Rd&:9)PB-6%UP7HW$cc/*h]DKKceT^t2)>1S^CO\7&Wq#`o5E%-C4Dj"oI)l%Uf%O`V68A<](Rq)4C>tT##FmDc'>?Cj[]qt&?a0Re]b:Jif?)WFoeD"4Er3'"PaLiTMA;!>FG5gXdrKhH+g"U<tSkNM-"jF-hQ`il_6b(01@Yq4J+9@Q29/17I>YFq5d1m[u9Tk%92N8B1^n<3:Z@(I\[:?]u$n[BRD^?8N2B,i)XXBGBkHi(R$ap#bdUAtFiIN6Egh7:t,@8*NMGh'eP-Yq#2W?p<-;CF2BscSp`D'M@>OoHn^QVrrPE&O!U14]>dK;cpB12),*leDKKZ]'lSlV##':2Oq@jrAI61uF5@r8`9E&AN*,/WGX3CnheGp3ZZnZE)[D2G-S\2tSFA2&\Ur-:G-9TI+(@Z$6iqP]1(5opRTJ^I<IBU`uM4GK>)%LMSC<&&^7D$_)5$/-tiic7$7Q:#Nr3G"8S\o:V7Zt!3$LGs.Cb:TdS&YJSJ-L^<5ooX%U_8J$:0%_A.dB^S0hm([6al2nGS<4=T.Y021XWmhp/Pp769"1C$^*8fiHKZD\E^t+Ti:fS#q2k5*P*=gi%<J`U3i968Y@LF<F>4dMlUCI:L@Mf`nngn0;aJX2#D8C>?JI7P)Z;_IqGK6^#&^Ao@HTVs_b^K:$4!:>8imGR3fE\dal]&C2@'<XQt,K1m9:,!SWTKn*f%C".-o9\)SouUlj6fP-(:c9V4t'u?.1M=42j@q7A.;Qnr[$dSl#Xj9^`nC7bS)*4Cs".2h8=EFI+a<8'YegkaJAkEY<(\O]P`3T=p(kb\1+)S/\iY)%q(aJ_!mP2eeQT0EYb>lT2N"YR7+?V,-.153gQm4dnQ<Kgj6"&"M9O<0crmp?.0o"J&g/.emiUng<q)BqTR_:Q9amN8nq4Np1T[IlJ>OTsRGg<7i#k0kHL$443!l@GlU\UQnU$cUHW&1<shu)mgok_&TQP-:B[7[aUqn0t]s!iB8Y7;f&MKVR5ZK)\c4F3LbpD7rVfp6;$QT&2F)1Om=kC%i!(UMT(P5@!"[?V2mjm]`M>M\lc(+FFo0teA9Jr9Vt`*k!)79\t68pa/T^(+koY$h5%)&+<]JbXsLpI'd%!E7-0ihUNt:R8Q3A?#c5W+2htQ-\968'Y@&K9P"=W2L)m6Al&m]PF;;Vcksp7+MCBF@f[Qh1a,&HF-'c80?(4Ij@+"+YT:B4?#2qdr*r\M`r.o^p6;hPoqOS/mNol7d;X_U`ZgBs?Dn[B_lE/#D:Fr_N`sgXI?k5ci&5cHT2,AQu0g=?O,#'#N?l(sHI`bt\8B=N)R*7k*cY7In5b[n;m4U$N,)E`HdQ5A9&#2hJ.^fRSG',13iiG]G+g<Do]4k1sd-WP_Q-T$AH`b%FJ7mp,@PWrjMcmE;eIKn'hD+r)G<GCZ,p.hSgRK0OB`"64RiWf`CF070_BbG@^-cXFNSfTefAE(]*GJ[IF<j&?7$!05WJfPN'eBgEi<(rnq5:hKoX^_/AS&Gu(hWO[UqK^5rgSu:
-
