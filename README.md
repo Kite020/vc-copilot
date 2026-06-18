@@ -208,31 +208,25 @@ Tools:
 
 ## Upload Page
 
-*Add screenshot here*
-
-```text
-screenshots/upload-page.png
-```
+![Upload Page](Screenshots/uploadPage.png)
 
 ---
 
 ## Analysis Dashboard
 
-*Add screenshot here*
-
-```text
-screenshots/dashboard.png
-```
+![Analysis Dashboard](Screenshots/dashboardResult1.png)
 
 ---
 
 ## Investment Recommendation
 
-*Add screenshot here*
+![Investment Recommendation](Screenshots/dashboardResult2.png)
 
-```text
-screenshots/recommendation.png
-```
+---
+
+## Backend API (Swagger)
+
+![Swagger Backend](Screenshots/swaggerBackend.png)
 
 ---
 
