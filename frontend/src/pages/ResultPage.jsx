@@ -306,7 +306,7 @@ function ResultPage() {
       </Card>
 
       
-      <Row className="g-4 mt-2">
+      <Row className="g-4 mb-4">
 
         <Col md={6}>
           <Card className="shadow-sm h-100">
@@ -357,7 +357,7 @@ function ResultPage() {
         </Col>
 
       </Row>
-      <Row className="g-4 mt-2">
+      <Row className="g-4 mb-4">
 
         <Col md={6}>
           <Card className="shadow-sm h-100">
